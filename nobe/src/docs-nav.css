@@ -1,0 +1,76 @@
+.docs-nav {
+	--nobe-marker-shut: rotate(90deg);
+}
+
+.docs-nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.docs-nav > ul {
+	background-color: #37f1;
+	border-radius: 18px;
+	padding: 6px;
+}
+
+.docs-nav ul ul li:first-of-type,
+.docs-nav li + li {
+	margin-block-start: 2px;
+}
+
+.docs-nav details {
+	border-radius: 12px;
+}
+
+.docs-nav svg {
+	block-size: 1.5em;
+	inline-size: 1.5em;
+	float: right;
+	color: #37f;
+}
+
+.docs-nav summary,
+.docs-nav a {
+	color: inherit;
+	text-decoration: none;
+	padding: 6px;
+	padding-inline-start: 12px;
+	border-radius: 12px;
+	display: block;
+	transition: background-color 120ms;
+	outline-offset: calc(-1 * var(--nobe-outline-width));
+	background-color: #37f0;
+}
+
+.docs-nav [open] > summary {
+	background-color: #37f1;
+}
+
+.docs-nav .nobe-shut > summary {
+	background-color: #37f0;
+}
+
+.docs-nav ul ul a {
+	margin-inline-start: 24px;
+}
+
+@media (hover: hover) {
+	.docs-nav summary:hover,
+	.docs-nav a:hover {
+		background-color: #37f1;
+	}
+}
+
+@media (hover: none) {
+	.docs-nav summary,
+	.docs-nav a {
+		transition: background-color 360ms;
+	}
+}
+
+.docs-nav summary:active,
+.docs-nav a:active {
+	background-color: #37f2;
+	transition-timing-function: step-start;
+}

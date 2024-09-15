@@ -1,0 +1,50 @@
+.nobe-flow {
+	display: flow-root !important;
+}
+
+@supports not (display: flow-root) {
+	.nobe-flow {
+		display: block;
+	}
+
+	.nobe-flow::before,
+	.nobe-flow::after {
+		content: ' ';
+		display: table;
+	}
+
+	.nobe-flow::after {
+		clear: both;
+	}
+}
+
+.nobe-flow > :not(.nobe-flee) {
+	inline-size: calc(100% - 2 * var(--nobe-flow-gutter)) !important;
+	margin-block-end: var(--nobe-flow-margin, 1rem) !important;
+	margin-block-start: var(--nobe-flow-margin, 1em) !important;
+	margin-inline-end: auto !important;
+	margin-inline-start: auto !important;
+	max-inline-size: var(--nobe-flow-width) !important;
+}
+
+.nobe-flow > .nobe-pull:not(.nobe-flee) {
+	margin-block-start: 0 !important;
+}
+
+.nobe-flow > .nobe-push:not(.nobe-flee) {
+	margin-block-end: 0 !important;
+}
+
+.nobe-flow > .nobe-edge:not(.nobe-flee) {
+	inline-size: 100% !important;
+}
+
+.nobe-flow > .nobe-wide:not(.nobe-flee) {
+	max-inline-size: calc(
+		var(--nobe-flow-width) + 2 * var(--nobe-flow-gutter)
+	) !important;
+}
+
+.nobe-flow > .nobe-full:not(.nobe-flee) {
+	max-inline-size: 100% !important;
+}

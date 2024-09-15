@@ -1,0 +1,7 @@
+.docs-version {
+	text-align: center;
+}
+
+.docs-version > code {
+	color: #37f;
+}

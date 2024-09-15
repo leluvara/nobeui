@@ -1,0 +1,57 @@
+@keyframes nobe-stripes {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: var(--nobe-stripes-size) 0;
+	}
+}
+
+.nobe-stripes {
+	--nobe-stripes: linear-gradient(
+		45deg,
+		var(--nobe-stripes-bg) calc(25% - 1px),
+		var(--nobe-stripes-fg) 25%,
+		var(--nobe-stripes-fg) calc(50% - 1px),
+		var(--nobe-stripes-bg) 50%,
+		var(--nobe-stripes-bg) calc(75% - 1px),
+		var(--nobe-stripes-fg) 75%,
+		var(--nobe-stripes-fg) calc(100% - 1px),
+		var(--nobe-stripes-bg) 100%
+	);
+
+	animation: nobe-stripes 1s linear infinite;
+}
+
+.nobe-stripes:disabled {
+	opacity: 1;
+}
+
+.nobe-stripes:not(.nobe-progress),
+.nobe-stripes.nobe-progress:indeterminate {
+	background-attachment: scroll !important;
+	background-clip: border-box !important;
+	background-image: var(--nobe-stripes) !important;
+	background-origin: border-box !important;
+	background-repeat: repeat !important;
+	background-size: var(--nobe-stripes-size) var(--nobe-stripes-size) !important;
+}
+
+/* -moz- */
+.nobe-progress.nobe-stripes:not(:indeterminate)::-moz-progress-bar {
+	background-image: var(--nobe-stripes);
+	background-position: inherit;
+	background-size: var(--nobe-stripes-size) var(--nobe-stripes-size);
+}
+
+.nobe-progress.nobe-stripes:indeterminate::-moz-progress-bar {
+	visibility: hidden;
+}
+
+/* -webkit- */
+.nobe-progress.nobe-stripes::-webkit-progress-value {
+	background-image: var(--nobe-stripes);
+	background-position: inherit;
+	background-size: var(--nobe-stripes-size) var(--nobe-stripes-size);
+}

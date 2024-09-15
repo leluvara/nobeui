@@ -1,0 +1,8 @@
+.nobe-number {
+	appearance: textfield;
+}
+
+.nobe-number::-webkit-inner-spin-button,
+.nobe-number::-webkit-outer-spin-button {
+	appearance: none;
+}

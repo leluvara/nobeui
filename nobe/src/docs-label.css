@@ -1,0 +1,32 @@
+.docs-label {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) min-content;
+	transition: background-color 120ms;
+	padding-block-end: 6px;
+	padding-block-start: 6px;
+	padding-inline-start: 12px;
+	padding-inline-end: 12px;
+	gap: 8px;
+	border-radius: 12px;
+}
+
+.docs-label > input {
+	margin-block-start: 0.25em;
+}
+
+@media (hover: hover) {
+	.docs-label:hover {
+		background-color: #37f1;
+	}
+}
+
+@media (hover: none) {
+	.docs-label {
+		transition: background-color 360ms;
+	}
+}
+
+.docs-label:active {
+	background-color: #37f2;
+	transition-timing-function: step-start;
+}

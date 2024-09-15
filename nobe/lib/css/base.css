@@ -1,0 +1,159 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	transition-property: none;
+}
+
+html {
+	font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu',
+		'Cantarell', 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	tab-size: 4;
+	-webkit-tap-highlight-color: transparent;
+	text-size-adjust: 100%;
+}
+
+body,
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+	margin: 0;
+}
+
+h1 {
+	margin: 0.67em 0;
+	font-size: 2em;
+	line-height: 1.125;
+}
+
+h2 {
+	line-height: 1.25;
+}
+
+h3 {
+	line-height: 1.375;
+}
+
+hr {
+	color: inherit;
+	block-size: 0;
+	border: 1px solid currentColor;
+}
+
+abbr[title] {
+	text-decoration: underline dotted;
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+summary {
+	display: list-item;
+	cursor: default;
+}
+
+table {
+	text-indent: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	margin: 0;
+	background-color: transparent;
+	color: inherit;
+	font: inherit;
+	letter-spacing: inherit;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+[type='search'] {
+	-webkit-appearance: textfield;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	block-size: auto;
+}
+
+::-webkit-input-placeholder {
+	color: inherit;
+	opacity: 0.54;
+}
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+:-moz-ui-invalid {
+	box-shadow: none;
+}
+
+:disabled {
+	opacity: 0.54;
+}
+
+/* Outline and focus */
+* {
+	outline-offset: var(--nobe-outline-offset);
+}
+
+:focus {
+	outline: var(--nobe-outline-color) var(--nobe-outline-style)
+		var(--nobe-outline-width);
+}
+
+:focus:not(:focus-visible) {
+	outline-style: none;
+}
+
+/* Safari */
+@supports (background: -webkit-named-image(i)) {
+	/* Make outline show up */
+	input[type='date']:focus,
+	input[type='datetime-local']:focus,
+	input[type='month']:focus,
+	input[type='time']:focus,
+	input[type='week']:focus {
+		outline-style: var(--nobe-outline-style);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		animation-delay: -1ms !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		transition-delay: 0s !important;
+		transition-duration: 0s !important;
+	}
+}

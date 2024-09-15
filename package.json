@@ -1,0 +1,60 @@
+{
+	"name": "nobeui",
+	"version": "1.0.0",
+	"description": "A tiny CSS and JS library to get more out of native HTML elements",
+	"keywords": [
+		"css",
+		"html",
+		"js",
+		"library",
+		"web"
+	],
+	"homepage": "https://leluvara.github.io/nobeui/",
+	"author": "Leluvara",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/leluvara/nobeui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/leluvara/nobeui/issues"
+	},
+	"browser": "nobe/lib/nobeui.js",
+	"main": "nobe/lib/nobeui.js",
+	"module": "nobe/lib/nobeui.js",
+	"style": "nobe/lib/nobeui.css",
+	"scripts": {
+		"preview": "bun nobe/dev/preview.js",
+		"serve": "bun nobe/dev/serve.js",
+		"write": "bun nobe/dev/write.js"
+	},
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"@types/bun": "^1.1.9",
+		"autoprefixer": "^10.4.20",
+		"cssnano": "^7.0.6",
+		"highlight.js": "^11.10.0",
+		"postcss": "^8.4.45",
+		"postcss-dark-theme-class": "^1.3.0",
+		"postcss-import": "^16.1.0",
+		"rollup": "^4.21.2"
+	},
+	"files": [
+		"nobe/lib/**/*",
+		"dist/nobeui.css",
+		"dist/nobeui.js"
+	],
+	"browserslist": [
+		"ChromeAndroid>=79",
+		"Chrome>=79",
+		"Edge>=79",
+		"Firefox>=76",
+		"Safari>=12.1",
+		"iOS>=12.2"
+	],
+	"prettier": {
+		"useTabs": true,
+		"semi": false,
+		"singleQuote": true
+	}
+}

@@ -1,0 +1,77 @@
+.nobe-range {
+	appearance: none;
+	block-size: 1em;
+	border-radius: 0.5em;
+	transition-duration: 120ms;
+}
+
+/* Firefox */
+.nobe-range::-moz-range-track {
+	box-sizing: border-box;
+	border: var(--nobe-range-inset) solid transparent;
+	border-radius: inherit;
+	background-clip: padding-box;
+	background-color: var(--nobe-range-bg);
+	block-size: 1em;
+}
+
+.nobe-range::-moz-range-progress {
+	background-color: transparent;
+	border-radius: inherit;
+}
+
+.nobe-range::-moz-range-thumb {
+	border: 0;
+	border-radius: inherit;
+	background-color: var(--nobe-range-fg);
+	outline-offset: var(--nobe-outline-offset);
+}
+
+/* Chrome, Edge, Safari */
+.nobe-range::-webkit-slider-container {
+	border: var(--nobe-range-inset) solid transparent;
+	border-radius: inherit;
+	background-clip: padding-box;
+	background-color: var(--nobe-range-bg);
+	block-size: 1em;
+}
+
+.nobe-range::-webkit-slider-runnable-track {
+	border-radius: inherit;
+	margin-inline-end: calc(-1 * var(--nobe-range-inset));
+	margin-inline-start: calc(-1 * var(--nobe-range-inset));
+}
+
+.nobe-range::-webkit-slider-thumb {
+	border-radius: inherit;
+	appearance: none;
+	background-color: var(--nobe-range-fg);
+	block-size: 1em;
+	inline-size: 1em;
+	outline-offset: var(--nobe-outline-offset);
+}
+
+/* Focus */
+.nobe-range:focus {
+	outline-style: none;
+}
+
+/* Firefox */
+.nobe-range:focus::-moz-range-thumb {
+	outline: var(--nobe-outline-color) var(--nobe-outline-style)
+		var(--nobe-outline-width);
+}
+
+.nobe-range:focus:not(:focus-visible)::-moz-range-thumb {
+	outline-style: none;
+}
+
+/* Webkit */
+.nobe-range:focus::-webkit-slider-thumb {
+	outline: var(--nobe-outline-color) var(--nobe-outline-style)
+		var(--nobe-outline-width);
+}
+
+.nobe-range:focus:not(:focus-visible)::-webkit-slider-thumb {
+	outline-style: none;
+}

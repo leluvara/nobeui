@@ -1,0 +1,7 @@
+.nobe-ripple {
+	animation-duration: 240ms;
+	background-attachment: scroll !important;
+	background-clip: border-box !important;
+	background-origin: border-box !important;
+	background-repeat: no-repeat !important;
+}

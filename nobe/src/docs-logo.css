@@ -1,0 +1,26 @@
+.docs-logo {
+	display: block;
+	transition: transform 120ms;
+	transform-origin: bottom;
+	border-radius: 12px;
+}
+
+@media (hover: hover) {
+	.docs-logo:hover {
+		transform: scale(1.01);
+	}
+}
+
+.docs-logo:active {
+	transform: scale(0.98);
+	transition-timing-function: step-start;
+}
+
+.docs-logo > img {
+	display: block;
+	inline-size: 100%;
+	block-size: auto;
+	margin: auto;
+	max-inline-size: 14rem;
+	pointer-events: none;
+}

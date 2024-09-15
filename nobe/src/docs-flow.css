@@ -1,0 +1,8 @@
+.docs-flow > div {
+	text-align: center;
+	padding-block-end: 12px;
+	padding-block-start: 12px;
+	border-radius: 12px;
+	background-color: #37f2;
+	font-family: monospace;
+}

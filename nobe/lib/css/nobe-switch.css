@@ -1,0 +1,30 @@
+.nobe-switch {
+	border-radius: 0.5em;
+	transition-duration: 120ms;
+}
+
+.nobe-switch,
+.nobe-switch::before {
+	inline-size: var(--nobe-switch-width);
+}
+
+.nobe-switch::before {
+	border: var(--nobe-switch-inset) solid transparent;
+	background-clip: padding-box;
+	background-color: var(--nobe-switch-bg);
+	transition-property: background-color;
+}
+
+.nobe-switch::after {
+	background-color: var(--nobe-switch-fg);
+	transition-property: margin;
+	transition-timing-function: ease;
+}
+
+.nobe-switch:checked::after {
+	margin-inline-start: calc(var(--nobe-switch-width) - 1em);
+}
+
+.nobe-switch:indeterminate::after {
+	margin-inline-start: calc(var(--nobe-switch-width) - 1.5em);
+}

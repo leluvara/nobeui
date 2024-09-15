@@ -1,0 +1,53 @@
+.nobe-checkbox {
+	--nobe-tick-round: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 9 11 16 7 12" stroke="black" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>');
+	--nobe-dash-round: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 12H17" stroke="black" stroke-width="5" fill="none" stroke-linecap="round" /></svg>');
+	--nobe-tick-square: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 9 11 16 7 12" stroke="black" stroke-width="5" fill="none" stroke-linecap="square" /></svg>');
+	--nobe-dash-square: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 12H17" stroke="black" stroke-width="5" fill="none" stroke-linecap="square" /></svg>');
+
+	--nobe-tick: var(--nobe-tick-round);
+	--nobe-dash: var(--nobe-dash-round);
+
+	border-radius: 0.25em;
+	transition-duration: 60ms;
+}
+
+.nobe-checkbox::before {
+	background-color: var(--nobe-checkbox-bg);
+	border: var(--nobe-checkbox-border-width) solid var(--nobe-checkbox-fg);
+	transition-property: border-width;
+	transition-timing-function: step-end;
+}
+
+.nobe-checkbox::after {
+	border: var(--nobe-checkbox-border-width) solid transparent;
+	mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0H24V24H0Z" /></svg>')
+			50% / 100% no-repeat subtract,
+		var(--nobe-tick) 50% / 0% no-repeat add, var(--nobe-dash) 50% / 0% no-repeat;
+
+	transition-property: mask-size, border-width, background-color, border-color;
+	transition-timing-function: ease, ease, step-start, step-end;
+}
+
+.nobe-checkbox:checked::after,
+.nobe-checkbox:indeterminate::after {
+	border-color: var(--nobe-checkbox-fg);
+	background-color: var(--nobe-checkbox-fg);
+	transition-timing-function: ease, ease, step-end, step-start;
+}
+
+/* Prevent masks being cut off when --nobe-checkbox-border-width too thick */
+.nobe-checkbox:checked::before,
+.nobe-checkbox:indeterminate::before {
+	border-width: 1px;
+	transition-timing-function: step-start;
+}
+
+.nobe-checkbox:checked::after {
+	border-width: 0.6em 0.5em 0.4em;
+	mask-size: 100%, 100%, 0%;
+}
+
+.nobe-checkbox:indeterminate::after {
+	border-width: 0.5em;
+	mask-size: 100%, 0%, 100%;
+}

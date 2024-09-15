@@ -1,0 +1,14 @@
+.nobe-select {
+	appearance: none;
+	background-image: linear-gradient(
+			45deg,
+			transparent 50%,
+			var(--nobe-select-arrow-fg) 50%
+		),
+		linear-gradient(135deg, var(--nobe-select-arrow-fg) 50%, transparent 50%);
+	background-position: right calc(6px + var(--nobe-select-arrow-right)) top 50%,
+		right var(--nobe-select-arrow-right) top 50%;
+	background-repeat: no-repeat;
+	background-size: 6px 6px, 6px 6px;
+	padding-right: 24px;
+}

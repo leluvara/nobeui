@@ -1,0 +1,32 @@
+.nobe-details {
+	animation-duration: 240ms;
+}
+
+/* Summary */
+.nobe-summary {
+	list-style: none;
+}
+
+.nobe-summary::marker {
+	content: none;
+}
+
+.nobe-summary::-webkit-details-marker {
+	display: none;
+}
+
+/* Marker */
+.nobe-details > summary .nobe-marker {
+	vertical-align: top;
+	transform: var(--nobe-marker-shut);
+	transition: transform var(--nobe-details-time);
+	pointer-events: none;
+}
+
+.nobe-details[open] > summary .nobe-marker {
+	transform: var(--nobe-marker-open);
+}
+
+.nobe-details.nobe-shut > summary .nobe-marker {
+	transform: var(--nobe-marker-shut);
+}

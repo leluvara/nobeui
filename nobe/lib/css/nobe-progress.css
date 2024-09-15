@@ -1,0 +1,91 @@
+@keyframes nobe-progress {
+	0% {
+		transform: translate(0%, 0%);
+	}
+
+	50% {
+		transform: translate(200%, 0%);
+	}
+
+	100% {
+		transform: translate(0%, 0%);
+	}
+}
+
+.nobe-progress {
+	overflow: hidden;
+	border: 0;
+	border-radius: 0.5em;
+	appearance: none;
+	background-color: var(--nobe-progress-bg);
+	block-size: 1em;
+	animation-duration: 2s;
+}
+
+/* Firefox */
+.nobe-progress::-moz-progress-bar {
+	border-radius: inherit;
+	background-color: var(--nobe-progress-fg);
+}
+
+.nobe-progress:not(.nobe-stripes):indeterminate::-moz-progress-bar {
+	animation: nobe-progress ease-in-out infinite;
+	animation-duration: inherit;
+	inline-size: 33.333%;
+}
+
+/* Webkit */
+.nobe-progress::-webkit-progress-inner-element {
+	background-position: inherit;
+	border-radius: inherit;
+	animation-duration: inherit;
+}
+
+.nobe-progress::-webkit-progress-bar {
+	background-color: transparent;
+	background-position: inherit;
+	border-radius: inherit;
+	animation-duration: inherit;
+}
+
+.nobe-progress::-webkit-progress-value {
+	background-color: var(--nobe-progress-fg);
+	border-radius: inherit;
+}
+
+/* Indeterminate Safari */
+.nobe-progress:not(.nobe-stripes):indeterminate::-webkit-progress-value {
+	border-radius: inherit;
+	animation: nobe-progress ease-in-out infinite;
+	animation-duration: inherit;
+	inline-size: 33.333%;
+}
+
+/* Indeterminate Chrome */
+.nobe-progress:not(.nobe-stripes):indeterminate::before {
+	display: block;
+	border-radius: inherit;
+	animation: nobe-progress ease-in-out infinite;
+	animation-duration: inherit;
+	background-color: var(--nobe-progress-fg);
+	block-size: 1em;
+	content: '';
+	inline-size: 33.333%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.nobe-progress:not(.nobe-stripes):indeterminate::-moz-progress-bar {
+		animation: none;
+		transform: translateX(100%);
+	}
+
+	.nobe-progress:not(.nobe-stripes):indeterminate::-webkit-progress-value {
+		animation: none;
+		transform: translateX(100%);
+	}
+
+	.nobe-progress:not(.nobe-stripes):indeterminate::before {
+		animation: none;
+		transform: translateX(100%);
+	}
+}

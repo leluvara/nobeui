@@ -1,0 +1,131 @@
+:root {
+	--hljs-bg: #37f2;
+	--hljs-fg: black;
+
+	--hljs-attribute: #0082bc;
+	--hljs-constant: #0082bc;
+	--hljs-comment: #008c4a;
+	--hljs-punctuation: #777777;
+	--hljs-tag: #0e75f7;
+	--hljs-keyword: #bd42c2;
+	--hljs-string: #e02451;
+	--hljs-number: #618200;
+	--hljs-selector: #b55f00;
+	--hljs-class: #00888c;
+	--hljs-function: #b55f00;
+	--hljs-regex: #e02451;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--hljs-fg: #d4d4d4;
+
+		--hljs-attribute: #9cdcfe;
+		--hljs-constant: #4fc1ff;
+		--hljs-comment: #6a9955;
+		--hljs-punctuation: #808080;
+		--hljs-tag: #569cd6;
+		--hljs-keyword: #c586c0;
+		--hljs-string: #ce9178;
+		--hljs-number: #b5cea8;
+		--hljs-selector: #d7ba7d;
+		--hljs-class: #4ec9b0;
+		--hljs-function: #dcdcaa;
+		--hljs-regex: #d16969;
+	}
+}
+
+.hljs {
+	background-color: var(--hljs-bg);
+}
+
+.hljs,
+.hljs-operator,
+.hljs-symbol,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string,
+.hljs-section,
+.hljs-bullet,
+.hljs-code,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition,
+.hljs-deletion {
+	color: var(--hljs-fg);
+}
+
+.hljs-subst,
+.hljs-formula,
+.hljs-attr,
+.hljs-property,
+.hljs-params,
+.hljs-selector-attr,
+.hljs-attribute {
+	color: var(--hljs-attribute);
+}
+
+.hljs-variable.constant_ {
+	color: var(--hljs-constant);
+}
+
+.hljs-comment {
+	color: var(--hljs-comment);
+}
+
+.hljs-tag,
+.hljs-punctuation {
+	color: var(--hljs-punctuation);
+}
+
+.hljs-literal,
+.hljs-name,
+.hljs-doctag {
+	color: var(--hljs-tag);
+}
+
+.hljs-keyword {
+	color: var(--hljs-keyword);
+}
+
+.hljs-string {
+	color: var(--hljs-string);
+}
+
+.hljs-number {
+	color: var(--hljs-number);
+}
+
+.hljs-selector-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-pseudo {
+	color: var(--hljs-selector);
+}
+
+.hljs-type,
+.hljs-title {
+	color: var(--hljs-class);
+}
+
+.hljs-built_in,
+.hljs-title.function_ {
+	color: var(--hljs-function);
+}
+
+.hljs-regexp {
+	color: var(--hljs-regex);
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+
+.hljs-link {
+	text-decoration: underline;
+}

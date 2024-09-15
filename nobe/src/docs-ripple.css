@@ -1,0 +1,11 @@
+.docs-ripple {
+	block-size: 6rem;
+	background-color: #37f2;
+	display: grid;
+	place-items: center;
+	text-align: center;
+	border-radius: 12px;
+	cursor: default;
+	user-select: none;
+	font-weight: bold;
+}

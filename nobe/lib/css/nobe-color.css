@@ -1,0 +1,18 @@
+.nobe-color {
+	border: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.nobe-color::-moz-color-swatch {
+	border: 0;
+}
+
+.nobe-color::-webkit-color-swatch {
+	border: 0;
+	border-radius: 0;
+}
+
+.nobe-color::-webkit-color-swatch-wrapper {
+	padding: 0;
+}

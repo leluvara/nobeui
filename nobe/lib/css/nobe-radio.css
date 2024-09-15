@@ -1,0 +1,22 @@
+.nobe-radio {
+	border-radius: 0.5em;
+	transition-duration: 30ms;
+}
+
+.nobe-radio::before {
+	background-color: var(--nobe-radio-bg);
+	border: var(--nobe-radio-fg) solid var(--nobe-radio-border-width);
+}
+
+.nobe-radio::after {
+	border: 0.5em solid transparent;
+	background-clip: padding-box;
+	transition-property: background-color, border-width;
+	transition-timing-function: step-end, ease;
+}
+
+.nobe-radio:checked::after {
+	border-width: calc(0.125em + var(--nobe-radio-border-width));
+	background-color: var(--nobe-radio-fg);
+	transition-timing-function: step-start, ease;
+}

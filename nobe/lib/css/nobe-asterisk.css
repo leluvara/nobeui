@@ -1,0 +1,55 @@
+/* Common styles for checkbox, radio and switch  */
+.nobe-checkbox,
+.nobe-radio,
+.nobe-switch {
+	position: relative;
+	display: inline-block;
+	overflow: visible;
+	padding: 0;
+	border: 0;
+	appearance: none;
+	block-size: 1em;
+	inline-size: 1em;
+}
+
+.nobe-checkbox::before,
+.nobe-checkbox::after,
+.nobe-radio::before,
+.nobe-radio::after,
+.nobe-switch::before,
+.nobe-switch::after {
+	position: absolute;
+	display: block;
+	block-size: 1em;
+	content: '';
+	inline-size: 1em;
+	transition-duration: inherit;
+	transition-property: none;
+	border-radius: inherit;
+}
+
+/* :focus styles for checkbox, radio and switch */
+.nobe-checkbox:focus,
+.nobe-radio:focus,
+.nobe-switch:focus {
+	outline-style: none;
+}
+
+.nobe-checkbox::before,
+.nobe-radio::before,
+.nobe-switch::after {
+	outline-offset: var(--nobe-outline-offset);
+}
+
+.nobe-checkbox:focus::before,
+.nobe-radio:focus::before,
+.nobe-switch:focus::after {
+	outline: var(--nobe-outline-color) var(--nobe-outline-style)
+		var(--nobe-outline-width);
+}
+
+.nobe-checkbox:focus:not(:focus-visible)::before,
+.nobe-radio:focus:not(:focus-visible)::before,
+.nobe-switch:focus:not(:focus-visible)::after {
+	outline-style: none;
+}

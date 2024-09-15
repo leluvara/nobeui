@@ -1,0 +1,59 @@
+:root {
+	/* :focus */
+	--nobe-outline-color: #37f;
+	--nobe-outline-width: 4px;
+	--nobe-outline-style: solid;
+	--nobe-outline-offset: 2px;
+
+	/* Checkbox */
+	--nobe-checkbox-bg: #37f0;
+	--nobe-checkbox-fg: #37f;
+	--nobe-checkbox-border-width: 1px;
+
+	/* Details */
+	--nobe-marker-shut: rotate(-90deg);
+	--nobe-marker-open: rotate(0deg);
+
+	/* Meter */
+	--nobe-meter-bg: #37f2;
+	--nobe-meter-success: #3b3;
+	--nobe-meter-warning: #fb0;
+	--nobe-meter-danger: #f54;
+
+	/* Progress */
+	--nobe-progress-bg: #37f2;
+	--nobe-progress-fg: #37f;
+
+	/* Radio */
+	--nobe-radio-bg: #37f0;
+	--nobe-radio-fg: #37f;
+	--nobe-radio-border-width: 1px;
+
+	/* Range */
+	--nobe-range-bg: #37f3;
+	--nobe-range-fg: #37f;
+	--nobe-range-inset: 0.125em;
+
+	/* Select */
+	--nobe-select-arrow-fg: currentColor;
+	--nobe-select-arrow-right: 6px;
+
+	/* Switch */
+	--nobe-switch-bg: #37f3;
+	--nobe-switch-fg: #37f;
+	--nobe-switch-inset: 0.125em;
+	--nobe-switch-width: 2em;
+
+	/* Flow */
+	--nobe-flow-gutter: 12px;
+	--nobe-flow-margin: initial; /* 1em / 1rem */
+	--nobe-flow-width: 45rem;
+
+	/* Ripple */
+	--nobe-ripple-bg: #37f4;
+
+	/* Stripes */
+	--nobe-stripes-bg: #0001;
+	--nobe-stripes-fg: #fff1;
+	--nobe-stripes-size: 3rem;
+}

@@ -1,0 +1,78 @@
+:root {
+	color-scheme: light;
+
+	--docs-bg: white;
+	--docs-fg: black;
+	--docs-sidebar-size: 16rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+
+		--docs-bg: #020b21;
+		--docs-fg: white;
+	}
+}
+
+html {
+	background-color: var(--docs-bg);
+	color: var(--docs-fg);
+}
+
+html[data-smooth-scrolling] {
+	scroll-behavior: smooth;
+}
+
+a {
+	color: #37f;
+}
+
+main code {
+	background-color: #37f2;
+	border-radius: 6px;
+	padding: 2px;
+	padding-inline-end: 4px;
+	padding-inline-start: 4px;
+}
+
+main pre {
+	text-align: center;
+	overflow: auto;
+}
+
+main pre > code {
+	border-radius: 12px;
+	text-align: left;
+	display: inline-block;
+	min-inline-size: min(var(--nobe-flow-width), 100%);
+	padding: 6px;
+	padding-inline-end: 12px;
+	padding-inline-start: 12px;
+}
+
+html[data-smooth-scrolling] section[id],
+html[data-smooth-scrolling] article[id] {
+	transition: background-color 240ms;
+}
+
+section[id]:target,
+article[id]:target {
+	background-color: #37f1;
+}
+
+@media screen and (min-width: 36rem) {
+	body {
+		padding-inline-start: min(var(--docs-sidebar-size), 33%);
+		padding-inline-start: min(var(--docs-sidebar-size), 33dvi);
+	}
+}
+
+.nobe-color,
+.nobe-meter,
+.nobe-number,
+.nobe-progress,
+.nobe-range,
+.nobe-select {
+	max-inline-size: 100%;
+}

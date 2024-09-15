@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" data-smooth-scrolling>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>nobeui</title>
+		<meta name="author" content="Leluvara" />
+		<meta
+			name="description"
+			content="A tiny CSS and JS library to get more out of native HTML elements"
+		/>
+		<meta name="keywords" content="css,html,js,library,web" />
+
+		<link rel="icon" href="favicon.ico" sizes="32x32" />
+		<link rel="icon" href="icon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+		<meta property="og:url" content="https://leluvara.github.io/nobeui/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="nobeui" />
+		<meta
+			property="og:description"
+			content="A tiny CSS and JS library to get more out of native HTML elements"
+		/>
+		<meta
+			property="og:image"
+			content="https://leluvara.github.io/nobeui/banner.png"
+		/>
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="leluvara.github.io" />
+		<meta property="twitter:url" content="https://leluvara.github.io/nobeui/" />
+		<meta name="twitter:title" content="nobeui" />
+		<meta
+			name="twitter:description"
+			content="A tiny CSS and JS library to get more out of native HTML elements"
+		/>
+		<meta
+			name="twitter:image"
+			content="https://leluvara.github.io/nobeui/banner.png"
+		/>
+
+		<link rel="stylesheet" href="nobeui.css" />
+		<link rel="stylesheet" href="index.css" />
+		<script>
+			document.documentElement.dataset.colorScheme =
+				localStorage.getItem('nobeui-docs-color-scheme') || 'system'
+
+			if (localStorage.getItem('nobeui-docs-smooth-scrolling') === '') {
+				delete document.documentElement.dataset.smoothScrolling
+			} else {
+				document.documentElement.dataset.smoothScrolling = ''
+			}
+		</script>
+		<script type="module" src="index.js"></script>
+	</head>
+	<body>
+		<div class="nobe-overlay">
+			<input
+				type="checkbox"
+				id="docs-sidebar-toggle"
+				autocomplete="off"
+				role="switch"
+			/>
+
+			<label for="docs-sidebar-toggle" class="docs-sidebar-toggle">
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path
+						d="M4 6H20M4 12H20M4 18H20"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+					/>
+				</svg>
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+				>
+					<line x1="18" y1="6" x2="6" y2="18"></line>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+				</svg>
+			</label>
+
+			<label for="docs-sidebar-toggle" class="docs-sidebar-backdrop"></label>
+
+			<div class="docs-sidebar">
+				<aside class="nobe-flow">
+					<a href="#" class="docs-logo nobe-push">
+						<img src="logo.svg" width="64" height="20" />
+					</a>
+					<div class="docs-version nobe-pull"><code>1.0.0</code></div>
+					<nav class="docs-nav">
+						<ul>
+							<li><a href="#getting-started">Getting started</a></li>
+							<li>
+								<details class="nobe-details">
+									<summary class="nobe-summary" role="button">
+										<span>Elements</span>
+										<svg
+											class="nobe-marker"
+											width="24"
+											height="24"
+											viewBox="0 0 24 24"
+										>
+											<path
+												d="M8 10 12 14 16 10"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+												stroke-linejoin="round"
+												stroke-linecap="round"
+											/>
+										</svg>
+									</summary>
+									<ul>
+										<li><a href="#checkbox">Checkbox</a></li>
+										<li><a href="#color">Color</a></li>
+										<li><a href="#details">Details</a></li>
+										<li><a href="#meter">Meter</a></li>
+										<li><a href="#number">Number</a></li>
+										<li><a href="#progress">Progress</a></li>
+										<li><a href="#radio">Radio</a></li>
+										<li><a href="#range">Range</a></li>
+										<li><a href="#select">Select</a></li>
+										<li><a href="#switch">Switch</a></li>
+									</ul>
+								</details>
+							</li>
+							<li>
+								<details class="nobe-details">
+									<summary class="nobe-summary" role="button">
+										<span>Others</span>
+										<svg
+											class="nobe-marker"
+											width="24"
+											height="24"
+											viewBox="0 0 24 24"
+										>
+											<path
+												d="M8 10 12 14 16 10"
+												fill="none"
+												stroke="currentColor"
+												stroke-width="2"
+												stroke-linejoin="round"
+												stroke-linecap="round"
+											/>
+										</svg>
+									</summary>
+									<ul>
+										<li><a href="#flow">Flow</a></li>
+										<li><a href="#overlay">Overlay</a></li>
+										<li><a href="#ripple">Ripple</a></li>
+										<li><a href="#stripes">Stripes</a></li>
+									</ul>
+								</details>
+							</li>
+							<li><a href="#variables">Variables</a></li>
+						</ul>
+					</nav>
+					<script>
+						document.currentScript.parentNode
+							.querySelector('.docs-nav')
+							.querySelectorAll('.nobe-details')
+					</script>
+					<form>
+						<fieldset title="Enable JavaScript" disabled>
+							<legend>Theme</legend>
+							<label class="docs-label">
+								<span>System</span>
+								<input
+									type="radio"
+									name="docs-color-scheme"
+									class="nobe-radio"
+									value="system"
+									checked
+								/>
+							</label>
+							<label class="docs-label">
+								<span>Dark</span>
+								<input
+									type="radio"
+									name="docs-color-scheme"
+									class="nobe-radio"
+									value="dark"
+								/>
+							</label>
+							<label class="docs-label">
+								<span>Light</span>
+								<input
+									type="radio"
+									name="docs-color-scheme"
+									class="nobe-radio"
+									value="light"
+								/>
+							</label>
+						</fieldset>
+						<fieldset title="Enable JavaScript" disabled>
+							<label class="docs-label">
+								<span>Smooth scrolling</span>
+								<input
+									type="checkbox"
+									name="docs-smooth-scrolling"
+									class="nobe-switch"
+									role="switch"
+									checked
+								/>
+							</label>
+						</fieldset>
+						<script>
+							for (const fieldset of document.currentScript.parentNode.querySelectorAll(
+								'fieldset[disabled]'
+							)) {
+								fieldset.removeAttribute('title')
+								fieldset.disabled = false
+							}
+
+							for (const radio of document.currentScript.parentNode.querySelectorAll(
+								'[name="docs-color-scheme"]'
+							)) {
+								if (
+									radio.value ===
+									localStorage.getItem('nobeui-docs-color-scheme')
+								) {
+									radio.checked = true
+									break
+								}
+							}
+
+							document.currentScript.parentNode.querySelector(
+								'[name="docs-smooth-scrolling"]'
+							).checked =
+								localStorage.getItem('nobeui-docs-smooth-scrolling') === ''
+									? false
+									: true
+						</script>
+					</form>
+				</aside>
+				<script>
+					try {
+						const sidebar = JSON.parse(
+							sessionStorage.getItem('nobeui-docs-sidebar')
+						)
+
+						if (sidebar) {
+							const sidebarEl = document.currentScript.parentNode
+
+							let i = 0
+							for (const details of sidebarEl.querySelectorAll('details')) {
+								details.open = sidebar.details[i++]
+							}
+
+							sidebarEl.scrollTop = sidebar.scrollTop
+						}
+					} catch {}
+				</script>
+			</div>
+		</div>
+
+		<main>
+			<header class="nobe-flow">
+				<h1>nobeui</h1>
+
+				<p>
+					A tiny CSS and JS library to get more out of native HTML elements.
+				</p>
+			</header>
+
+			<section class="nobe-flow" id="getting-started">
+				<h2>Getting started</h2>
+
+				<h3>npm</h3>
+
+				<pre
+					class="nobe-edge nobe-full"
+				><code class="hljs">npm add -D nobeui</code></pre>
+
+				<p>
+					Import CSS with <code>postcss-import</code> or any other tool that
+					resolves <code>node_modules</code>:
+				</p>
+
+				<pre
+					class="nobe-edge nobe-full"
+				><code class="hljs">@import 'nobeui';</code></pre>
+
+				<p>
+					Import JS with a bundler that resolves
+					<code>node_modules</code>:
+				</p>
+
+				<pre
+					class="nobe-edge nobe-full"
+				><code class="hljs">import { details, ripple } from 'nobeui'
+
+details.init()
+ripple.init()</code></pre>
+
+				<h3>CDN</h3>
+
+				<p>CSS via HTML:</p>
+
+				<pre
+					class="nobe-edge nobe-full"
+				><code class="hljs"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nobeui@1.0.0/dist/nobeui.css"></code></pre>
+
+				<p>CSS via CSS:</p>
+
+				<pre
+					class="nobe-edge nobe-full"
+				><code class="hljs">@import 'https://cdn.jsdelivr.net/npm/nobeui@1.0.0/dist/nobeui.css';</code></pre>
+
+				<p>JS:</p>
+
+				<pre
+					class="nobe-edge nobe-full"
+				><code class="hljs">import { details, ripple } from 'https://cdn.jsdelivr.net/npm/nobeui@1.0.0/dist/nobeui.js'
+
+details.init()
+ripple.init()</code></pre>
+			</section>
+
+			<section id="elements">
+				<header class="nobe-flow">
+					<h2>Elements</h2>
+				</header>
+
+				<article class="nobe-flow" id="checkbox">
+					<h3>Checkbox</h3>
+
+					<div>
+						<input type="checkbox" class="nobe-checkbox" checked />
+						<input type="checkbox" class="nobe-checkbox" />
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><input type="checkbox" class="nobe-checkbox" checked>
+<input type="checkbox" class="nobe-checkbox"></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="color">
+					<h3>Color</h3>
+
+					<div>
+						<input type="color" class="nobe-color" value="#3377ff" />
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><input type="color" class="nobe-color" value="#3377ff"></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="details">
+					<h3>Details</h3>
+
+					<details class="nobe-details">
+						<summary class="nobe-summary">
+							<svg
+								class="nobe-marker"
+								width="24"
+								height="24"
+								viewbox="0 0 24 24"
+							>
+								<path d="M8 9 12 16 16 9Z" fill="currentColor" />
+							</svg>
+							Summary
+						</summary>
+						<div>Details</div>
+					</details>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><details class="nobe-details">
+	<summary class="nobe-summary">
+		<svg class="nobe-marker" width="24" height="24" viewbox="0 0 24 24">
+			<path d="M8 9 12 16 16 9Z" fill="currentColor" />
+		</svg>
+		Summary
+	</summary>
+	<div>Details</div>
+</details></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="meter">
+					<h3>Meter</h3>
+
+					<div>
+						<meter class="nobe-meter"></meter>
+						<meter
+							class="nobe-meter"
+							value="0.3"
+							optimum="1"
+							low="0.4"
+							high="0.6"
+						></meter>
+						<meter
+							class="nobe-meter"
+							value="0.5"
+							optimum="1"
+							low="0.4"
+							high="0.6"
+						></meter>
+						<meter
+							class="nobe-meter"
+							value="0.7"
+							optimum="1"
+							low="0.4"
+							high="0.6"
+						></meter>
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><meter class="nobe-meter"></meter>
+<meter class="nobe-meter" value="0.3" optimum="1" low="0.4" high="0.6"></meter>
+<meter class="nobe-meter" value="0.5" optimum="1" low="0.4" high="0.6"></meter>
+<meter class="nobe-meter" value="0.7" optimum="1" low="0.4" high="0.6"></meter></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="number">
+					<h3>Number</h3>
+
+					<div>
+						<input type="number" class="nobe-number" />
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><input type="number" class="nobe-number"></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="progress">
+					<h3>Progress</h3>
+
+					<div>
+						<progress class="nobe-progress" value="0"></progress>
+						<progress class="nobe-progress" value="50" max="100"></progress>
+						<progress class="nobe-progress"></progress>
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><progress class="nobe-progress" value="0"></progress>
+<progress class="nobe-progress" value="50" max="100"></progress>
+<progress class="nobe-progress"></progress></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="radio">
+					<h3>Radio</h3>
+
+					<div>
+						<input type="radio" class="nobe-radio" name="example" checked />
+						<input type="radio" class="nobe-radio" name="example" />
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><input type="radio" class="nobe-radio" name="example" checked>
+<input type="radio" class="nobe-radio" name="example"></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="range">
+					<h3>Range</h3>
+
+					<div>
+						<input type="range" class="nobe-range" />
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><input type="range" class="nobe-range"></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="select">
+					<h3>Select</h3>
+
+					<div>
+						<select class="nobe-select">
+							<option value="1" selected>Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+						</select>
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><select class="nobe-select">
+	<option value="1" selected>Option 1</option>
+	<option value="2">Option 2</option>
+	<option value="3">Option 3</option>
+</select></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="switch">
+					<h3>Switch</h3>
+
+					<div><input type="checkbox" class="nobe-switch" role="switch" /></div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><input type="checkbox" class="nobe-switch" role="switch"></code></pre>
+				</article>
+			</section>
+
+			<section id="others">
+				<header class="nobe-flow">
+					<h2>Others</h2>
+				</header>
+
+				<article class="nobe-flow" id="flow">
+					<h3>Flow</h3>
+
+					<p>Container for content. Applies styles to direct children.</p>
+
+					<p>
+						Use <code>nobe-flee</code> class on a child to escape these styles.
+					</p>
+
+					<div class="docs-flow nobe-full nobe-edge nobe-flow">
+						<div>no classes</div>
+						<div class="nobe-edge">nobe-edge</div>
+						<div class="nobe-wide">nobe-wide</div>
+						<div class="nobe-edge nobe-wide">nobe-edge nobe-wide</div>
+						<div class="nobe-full">nobe-full</div>
+						<div class="nobe-edge nobe-full">nobe-edge nobe-full</div>
+						<div class="nobe-push">nobe-push</div>
+						<div class="nobe-pull">nobe-pull</div>
+					</div>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs"><div class="nobe-flow">
+	<div>no classes</div>
+	<div class="nobe-edge">nobe-edge</div>
+	<div class="nobe-wide">nobe-wide</div>
+	<div class="nobe-edge nobe-wide">nobe-edge nobe-wide</div>
+	<div class="nobe-full">nobe-full</div>
+	<div class="nobe-edge nobe-full">nobe-edge nobe-full</div>
+	<div class="nobe-push">nobe-push</div>
+	<div class="nobe-pull">nobe-pull</div>
+	<div class="nobe-flee">nobe-flee</div>
+</div></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="overlay">
+					<h3>Overlay</h3>
+
+					<p>Container for fixed elements.</p>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs" data-nobeui="nobe/lib/css/nobe-overlay.css"></code></pre>
+				</article>
+
+				<article class="nobe-flow" id="ripple">
+					<h3>Ripple</h3>
+
+					<p>
+						Add <code>nobe-ripple</code> class to any element. Uses
+						<code>background-image</code>.
+					</p>
+
+					<div class="docs-ripple nobe-ripple">Click here</div>
+				</article>
+
+				<article class="nobe-flow" id="stripes">
+					<h3>Stripes</h3>
+
+					<p>
+						Add <code>nobe-stripes</code> class to any element. Uses
+						<code>background-image</code>.
+					</p>
+
+					<div>
+						<progress
+							class="nobe-progress nobe-stripes"
+							value="50"
+							max="100"
+						></progress>
+						<progress class="nobe-progress nobe-stripes"></progress>
+					</div>
+				</article>
+			</section>
+
+			<section class="nobe-flow" id="variables">
+				<h2>Variables</h2>
+
+				<pre
+					class="nobe-edge nobe-full"
+				><code class="hljs" data-nobeui="nobe/lib/css/variables.css"></code></pre>
+			</section>
+		</main>
+	</body>
+</html>
