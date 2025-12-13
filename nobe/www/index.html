@@ -95,7 +95,7 @@
 					<a href="#" class="docs-logo nobe-push">
 						<img src="logo.svg" width="64" height="20" />
 					</a>
-					<div class="docs-version nobe-pull"><code>1.0.0</code></div>
+					<div class="docs-version nobe-pull"><code>1.1.0</code></div>
 					<nav class="docs-nav">
 						<ul>
 							<li><a href="#getting-started">Getting started</a></li>
@@ -308,19 +308,19 @@ ripple.init()</code></pre>
 
 				<pre
 					class="nobe-edge nobe-full"
-				><code class="hljs"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nobeui@1.0.0/dist/nobeui.css"></code></pre>
+				><code class="hljs"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nobeui@1.1.0/dist/nobeui.css"></code></pre>
 
 				<p>CSS via CSS:</p>
 
 				<pre
 					class="nobe-edge nobe-full"
-				><code class="hljs">@import 'https://cdn.jsdelivr.net/npm/nobeui@1.0.0/dist/nobeui.css';</code></pre>
+				><code class="hljs">@import 'https://cdn.jsdelivr.net/npm/nobeui@1.1.0/dist/nobeui.css';</code></pre>
 
 				<p>JS:</p>
 
 				<pre
 					class="nobe-edge nobe-full"
-				><code class="hljs">import { details, ripple } from 'https://cdn.jsdelivr.net/npm/nobeui@1.0.0/dist/nobeui.js'
+				><code class="hljs">import { details, ripple } from 'https://cdn.jsdelivr.net/npm/nobeui@1.1.0/dist/nobeui.js'
 
 details.init()
 ripple.init()</code></pre>
@@ -386,6 +386,19 @@ ripple.init()</code></pre>
 	</summary>
 	<div>Details</div>
 </details></code></pre>
+
+					<p>
+						You can also add an optional <code>onToggle</code> listener when
+						initializing:
+					</p>
+
+					<pre
+						class="nobe-edge nobe-full"
+					><code class="hljs">const onToggle = (detailsElement, isOpen) => {
+	console.log(detailsElement, isOpen)
+}
+
+details.init(onToggle)</code></pre>
 				</article>
 
 				<article class="nobe-flow" id="meter">
