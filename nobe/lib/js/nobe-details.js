@@ -1,5 +1,7 @@
 import { reduceMotion } from './utils.js'
 
+let callback
+
 const validate = (el) => {
 	return (
 		el &&
@@ -57,6 +59,10 @@ const toggle = (details, content) => {
 	const nobeOpen = details.classList.contains('nobe-open')
 	const nobeShut = details.classList.contains('nobe-shut')
 	const sliding = nobeOpen || nobeShut
+
+	if (typeof callback === 'function') {
+		callback(details, nobeOpen ? false : nobeShut ? true : opened)
+	}
 
 	// make sure markers don't skip transition
 	if (!sliding) {
@@ -180,12 +186,17 @@ const end = (e) => {
 	content.removeEventListener('transitionend', end)
 }
 
-export const init = () => {
+export const init = (onToggle) => {
+	if (typeof onToggle === 'function') {
+		callback = onToggle
+	}
+
 	document.documentElement.classList.add('nobe-details-enabled')
 	observe()
 }
 
 export const halt = () => {
+	callback = undefined
 	document.documentElement.classList.remove('nobe-details-enabled')
 	observer.disconnect()
 }
