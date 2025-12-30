@@ -13,4 +13,5 @@
 
 .nobe-overlay > * {
 	grid-area: 1 / 1;
+	min-block-size: 0;
 }
